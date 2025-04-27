@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: right;
+}
+.header h2 {
+    float: left;
+    margin: 0;
+}
+.logout-btn {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.sidebar {
+    width: 200px;
+    background: #333;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    padding-top: 20px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    margin: 10px 0;
+}
+.sidebar ul li a {
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+.sidebar ul li a:hover {
+    background: #575757;
+}
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+.form-container {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+}
+form input, form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+.landing-container {
+    text-align: center;
+    padding: 50px;
+}
+.landing-info {
+    margin-top: 30px;
+}
+.landing-buttons {
+    margin-top: 40px;
+}
+.btn {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+}
+.btn:hover {
+    background: #45a049;
+}
