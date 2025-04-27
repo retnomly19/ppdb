@@ -1,103 +1,41 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+    header("Location: dashboard.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPDB Online 2025 - SMAN Contoh</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #007acc;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            max-width: 700px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-        }
-        h2 {
-            color: #007acc;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        input, select, textarea {
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        button {
-            margin-top: 20px;
-            background-color: #007acc;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #eee;
-            margin-top: 40px;
-        }
-    </style>
+    <title>PPDB Online - Home</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header>
-    <h1>PPDB Online 2025</h1>
-    <p>SMAN Contoh - Penerimaan Peserta Didik Baru</p>
-</header>
+<div class="landing-container">
+    <header class="landing-header">
+        <h1>Selamat Datang di PPDB Online</h1>
+        <p>SMK/SMA/MA Tahun Ajaran 2025/2026</p>
+    </header>
 
-<main>
-    <h2>Formulir Pendaftaran</h2>
-    <form action="proses_pendaftaran.php" method="POST">
-        <label for="nama">Nama Lengkap</label>
-        <input type="text" id="nama" name="nama" required>
+    <section class="landing-info">
+        <h2>Informasi Pendaftaran</h2>
+        <p>🗓️ Pendaftaran: 1 Mei - 30 Juni 2025</p>
+        <h2>Syarat Pendaftaran</h2>
+        <ul>
+            <li>Fotokopi Akta Kelahiran</li>
+            <li>Fotokopi Kartu Keluarga</li>
+            <li>Ijazah/SKL</li>
+            <li>Pas Foto 3x4 (3 lembar)</li>
+        </ul>
+    </section>
 
-        <label for="nisn">NISN</label>
-        <input type="text" id="nisn" name="nisn" required>
-
-        <label for="asal_sekolah">Asal Sekolah</label>
-        <input type="text" id="asal_sekolah" name="asal_sekolah" required>
-
-        <label for="email">Email Aktif</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="alamat">Alamat Lengkap</label>
-        <textarea id="alamat" name="alamat" rows="3" required></textarea>
-
-        <label for="jurusan">Pilih Jurusan</label>
-        <select id="jurusan" name="jurusan" required>
-            <option value="">-- Pilih Jurusan --</option>
-            <option value="ipa">IPA</option>
-            <option value="ips">IPS</option>
-            <option value="bahasa">Bahasa</option>
-        </select>
-
-        <button type="submit">Daftar Sekarang</button>
-    </form>
-</main>
-
-<footer>
-    &copy; 2025 SMAN Contoh | PPDB Online
-</footer>
+    <div class="landing-buttons">
+        <a href="register.php" class="btn">Daftar</a>
+        <a href="login.php" class="btn">Login</a>
+    </div>
+</div>
 
 </body>
 </html>
