@@ -152,6 +152,7 @@ $data = $conn->query("SELECT * FROM biodata");
                 <th>Jalur</th>
                 <th>Aksi</th>
             </tr>
+
             <?php
             $no = 1;
             while ($row = $data->fetch_assoc()) {
