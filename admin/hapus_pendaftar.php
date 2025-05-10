@@ -7,12 +7,21 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     exit;
 }
 
-$id = $_GET['id'];
-$sql = "DELETE FROM biodata WHERE id = '$id'";
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-if ($conn->query($sql) === TRUE) {
-    header("Location: data_pendaftar.php");
+    // Gunakan prepared statement
+    $stmt = $conn->prepare("DELETE FROM biodata WHERE id = ?");
+    $stmt->bind_param("i", $id); // "i" untuk integer
+
+    if ($stmt->execute()) {
+        header("Location: data_pendaftar.php");
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "ID tidak ditemukan.";
 }
 ?>
