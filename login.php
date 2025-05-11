@@ -1,39 +1,58 @@
 <?php
+session_start();
 include 'config.php';
 
-if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $pass = $_POST['password'];
 
-    $cek = $conn->query("SELECT * FROM users WHERE email='$email'");
-    $user = $cek->fetch_assoc();
+    // Menggunakan prepared statement untuk mencegah SQL Injection
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user;
-        header("Location: dashboard.php");
-        exit;
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        // Verifikasi password
+        if (password_verify($pass, $user['password'])) {
+            $_SESSION['user'] = $user;
+
+            // Redirect berdasarkan role
+            if ($user['role'] === 'admin') {
+                header('Location: admin/dashboard.php'); // Arahkan ke dashboard admin
+            } else {
+                header('Location: dashboard.php'); // Arahkan ke dashboard user biasa
+            }
+            exit;
+        } else {
+            echo "<script>alert('Password salah!');</script>";
+        }
     } else {
-        echo "<script>alert('Login gagal. Cek kembali email dan password.');</script>";
+        echo "<script>alert('Username tidak ditemukan!');</script>";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login - PPDB Online</title>
+    <title>Login</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-<div class="form-container">
-    <h2>Login Akun</h2>
-    <form method="POST">
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit" name="login">Login</button>
-    </form>
-    <p>Belum punya akun? <a href="register.php">Daftar</a></p>
+<div class="login-background">
+    <div class="card">
+        <img src="assets/logo.png" alt="Logo" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+        <h2 class="text-center">Login</h2>
+        <form method="POST">
+            <input type="text" name="username" class="form-control" placeholder="Username" required>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <p class="text-center mt-3">Belum punya akun? <a href="register.php">Daftar</a></p>
+    </div>
 </div>
-
 </body>
 </html>
