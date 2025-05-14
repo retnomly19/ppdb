@@ -32,4 +32,4 @@ Website Penerimaan Peserta Didik Baru (PPDB) untuk SMAN 1 Bumiayu dengan fitur:
 - **Database**: MySQL.
 - **Tools**: 
   - GitHub (kolaborasi tim)
-  - Google Docs (Dokumen Sistem Kebutuhan Spesifikasi) ![SRS-PPDB](https://docs.google.com/document/d/1YjyX9Xnh6b3hthDsM7gZXCXDJeIXCn3p63LTJbTvwkk)
+  - Google Docs (Dokumen Sistem Kebutuhan Spesifikasi) [SRS-PPDB](https://docs.google.com/document/d/1YjyX9Xnh6b3hthDsM7gZXCXDJeIXCn3p63LTJbTvwkk)
