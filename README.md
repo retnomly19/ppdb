@@ -1,12 +1,12 @@
 # 🏫 PPDB Online SMAN 1 Bumiayu
 
-![Login](https://raw.githubusercontent.com/retnomly19/ppdb/main/screenshots/Login.jpeg)  
+![Login](https://github.com/retnomly19/ppdb/blob/main/main/screenshots/Login.jpeg?raw=true)  
 *Screenshot Login*
 
-![Dashboard](https://raw.githubusercontent.com/retnomly19/ppdb/main/screenshots/Dashboard.jpeg)  
+![Dashboard](https://github.com/retnomly19/ppdb/blob/main/main/screenshots/Dashboard.jpeg?raw=true)  
 *Screenshot Dashboard*
 
-![Dashboard Admin](https://raw.githubusercontent.com/retnomly19/ppdb/main/screenshots/Dashboard-admin.jpeg)  
+![Dashboard Admin](https://github.com/retnomly19/ppdb/blob/main/main/screenshots/Dashboard-admin.jpeg?raw=true)  
 *Screenshot Dashboard Admin*
 
 ## 📌 Tentang Proyek
