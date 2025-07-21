@@ -1,4 +1,4 @@
-# 🏫 PPDB Online SMAN 1 Bumiayu
+# 🏫 PPDB Online SMA GENZ
 
 ![Login](https://github.com/retnomly19/ppdb/blob/main/main/screenshots/Login.jpeg?raw=true)  
 *Screenshot Login*
