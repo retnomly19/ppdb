@@ -12,7 +12,6 @@ $data = $conn->query("SELECT * FROM biodata");
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Data Pendaftar</title>
     <link rel="stylesheet" href="../assets/style.css">
@@ -22,7 +21,6 @@ $data = $conn->query("SELECT * FROM biodata");
             font-family: sans-serif;
             background: #f4f4f4;
         }
-
         .header {
             background: rgb(104, 6, 6);
             color: white;
@@ -35,7 +33,6 @@ $data = $conn->query("SELECT * FROM biodata");
             width: 100%;
             z-index: 1000;
         }
-
         .sidebar {
             position: fixed;
             top: 70px;
@@ -46,13 +43,11 @@ $data = $conn->query("SELECT * FROM biodata");
             padding-top: 20px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
         }
-
         .sidebar h3 {
             text-align: center;
             color: white;
             margin-bottom: 20px;
         }
-
         .sidebar a {
             display: block;
             padding: 12px 20px;
@@ -60,53 +55,42 @@ $data = $conn->query("SELECT * FROM biodata");
             text-decoration: none;
             font-weight: bold;
         }
-
         .sidebar a:hover {
             background: rgb(194, 190, 190);
         }
-
         .content {
             margin-left: 240px;
             padding: 100px 40px 40px;
-            min-height: 100vh;
-            /* pastikan konten selalu penuh */
+            min-height: 100vh; /* pastikan konten selalu penuh */
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 5px;
         }
-
-        table th,
-        table td {
-            padding: 22px;
+        table th, table td {
+            padding: 15px;
             border: 1px solid #ccc;
             text-align: left;
         }
-
         table th {
             background: rgb(0, 79, 128);
             color: white;
         }
-
         .btn {
             padding: 5px 12px;
             border-radius: 10px;
             text-decoration: none;
             font-size: 12px;
         }
-
         .btn-edit {
             background: #0066cc;
             color: white;
         }
-
         .btn-delete {
             background: #cc0000;
             color: white;
         }
-
         .btn-add {
             background: #009933;
             color: white;
@@ -117,23 +101,23 @@ $data = $conn->query("SELECT * FROM biodata");
             font-size: 14px;
             text-decoration: none;
         }
+
     </style>
 </head>
-
 <body>
 
-    <div class="header">🎓 Admin PPDB - Data Pendaftar</div>
+<div class="header">🎓 Admin PPDB - Data Pendaftar</div>
 
-    <div class="sidebar">
-        <h3>📁 MENU</h3>
-        <a href="dashboard.php">🏠 Dashboard</a>
-        <a href="data_pendaftar.php">📄 Data Pendaftar</a>
-        <a href="uploadan_berkas.php">📤 Uploadan Berkas</a>
-        <a href="verifikasi.php">✅ Verifikasi</a>
-        <a href="../logout.php">🚪 Logout</a>
-    </div>
+<div class="sidebar">
+    <h3>📁 MENU</h3>
+    <a href="dashboard.php">🏠 Dashboard</a>
+    <a href="data_pendaftar.php">📄 Data Pendaftar</a>
+    <a href="upload_berkas.php">📤 Upload Berkas</a>
+    <a href="verifikasi.php">✅ Verifikasi</a>
+    <a href="../logout.php">🚪 Logout</a>
+</div>
 
-    <div class="content">
+<div class="content">
         <!-- Tombol Tambah Pendaftar -->
         <a href="create_pendaftar.php" class="btn-add">+ Tambah Pendaftar</a>
 
@@ -152,7 +136,6 @@ $data = $conn->query("SELECT * FROM biodata");
                 <th>Jalur</th>
                 <th>Aksi</th>
             </tr>
-
             <?php
             $no = 1;
             while ($row = $data->fetch_assoc()) {
@@ -177,8 +160,7 @@ $data = $conn->query("SELECT * FROM biodata");
             ?>
         </table>
     </div>
-    </div>
+</div>
 
 </body>
-
 </html>

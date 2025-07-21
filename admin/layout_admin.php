@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Admin PPDB</title>
     <link rel="stylesheet" href="../assets/style.css">
@@ -11,7 +10,6 @@
             font-family: sans-serif;
             background: #f4f4f4;
         }
-
         .header {
             background: rgb(104, 6, 6);
             color: white;
@@ -24,7 +22,6 @@
             width: 100%;
             z-index: 1000;
         }
-
         .sidebar {
             position: fixed;
             top: 70px;
@@ -35,13 +32,11 @@
             padding-top: 20px;
             box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
         }
-
         .sidebar h3 {
             text-align: center;
             color: white;
             margin-bottom: 20px;
         }
-
         .sidebar a {
             display: block;
             padding: 12px 20px;
@@ -49,11 +44,9 @@
             text-decoration: none;
             font-weight: bold;
         }
-
         .sidebar a:hover {
             background: rgb(194, 190, 190);
         }
-
         .content {
             margin-left: 240px;
             padding: 100px 40px 40px;
@@ -61,18 +54,17 @@
         }
     </style>
 </head>
-
 <body>
 
-    <div class="header">🎓 Admin PPDB</div>
+<div class="header">🎓 Admin PPDB</div>
 
-    <div class="sidebar">
-        <h3>📁 MENU</h3>
-        <a href="dashboard.php">🏠 Dashboard</a>
-        <a href="data_pendaftar.php">📄 Data Pendaftar</a>
-        <a href="uploadan_berkas.php">📤 Uploadan Berkas</a>
-        <a href="verifikasi.php">✅ Verifikasi</a>
-        <a href="../logout.php">🚪 Logout</a>
-    </div>
+<div class="sidebar">
+    <h3>📁 MENU</h3>
+    <a href="dashboard.php">🏠 Dashboard</a>
+    <a href="data_pendaftar.php">📄 Data Pendaftar</a>
+    <a href="upload_berkas.php">📤 Upload Berkas</a>
+    <a href="verifikasi.php">✅ Verifikasi</a>
+    <a href="../logout.php">🚪 Logout</a>
+</div>
 
-    <div class="content">
+<div class="content">

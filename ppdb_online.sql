@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 10, 2025 at 08:43 AM
+-- Generation Time: Jun 20, 2025 at 05:29 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -29,10 +29,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `berkas` (
   `id` int NOT NULL,
-  `user_id` int DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
   `jenis` varchar(50) DEFAULT NULL,
   `file` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `berkas`
+--
+
+INSERT INTO `berkas` (`id`, `user`, `jenis`, `file`) VALUES
+(6, 'Alin Sukmawati', 'pas_foto', 'pas_foto.jpeg'),
+(7, 'Alin Sukmawati', 'akta_kelahiran', 'akta.jpeg'),
+(8, 'Alin Sukmawati', 'transkrip_nilai', 'transkip_nilai.jpeg'),
+(9, 'Alin Sukmawati', 'ijazah', 'ijazah.jpeg'),
+(10, 'Alin Sukmawati', 'sertifikat', 'sertifikat.jpeg');
 
 -- --------------------------------------------------------
 
@@ -52,16 +63,21 @@ CREATE TABLE `biodata` (
   `jurusan` varchar(100) DEFAULT NULL,
   `tahun_ajaran` varchar(20) DEFAULT NULL,
   `jalur_pendaftaran` varchar(20) DEFAULT NULL,
-  `status` enum('diterima','ditolak') DEFAULT NULL
+  `status` enum('diterima','ditolak') DEFAULT NULL,
+  `pas_foto` varchar(255) DEFAULT NULL,
+  `akta_kelahiran` varchar(255) DEFAULT NULL,
+  `transkrip_nilai` varchar(255) DEFAULT NULL,
+  `ijazah` varchar(255) DEFAULT NULL,
+  `sertifikat` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `biodata`
 --
 
-INSERT INTO `biodata` (`id`, `user_id`, `nama`, `NISN`, `alamat`, `ttl`, `agama`, `asal_sekolah`, `jurusan`, `tahun_ajaran`, `jalur_pendaftaran`, `status`) VALUES
-(1, 1, 'jiso', 1212, 'Bumiayu', 'Brebes, 1 Januari 2010', 'Islam', 'SMP NEGERI 1 BUMIAYU', 'IPA', '2025/2026', 'Prestasi', NULL),
-(2, NULL, 'Retno', 1313, 'Bumiayu', 'Brebes, 12 Juli 2010', 'Islam', 'SMP N 3 TONJONG', 'IPS', '2025/2026', 'Reguler', NULL);
+INSERT INTO `biodata` (`id`, `user_id`, `nama`, `NISN`, `alamat`, `ttl`, `agama`, `asal_sekolah`, `jurusan`, `tahun_ajaran`, `jalur_pendaftaran`, `status`, `pas_foto`, `akta_kelahiran`, `transkrip_nilai`, `ijazah`, `sertifikat`) VALUES
+(1, 1, 'Retno Mulyani', 1515, 'Tonjong', 'Brebes, 25 Juli 2010', 'Islam', 'SMP NEGERI 3 TALOK', 'BAHASA', '2025/2026', 'Reguler', NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 9, 'Alin Sukmawati', 1616, 'Laren', 'Brebes, 4 April 2010', 'Islam', 'SMP NEGERI 2 BUMIAYU', 'IPS', '2025/2026', 'Prestasi', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -98,8 +114,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `status`, `hasil`, `role`) VALUES
-(1, 'retno', '$2y$10$yhNwnkhtXQoSdExMMkf0f.yO7HRj2btQ5ZnTDN5T6SQT55f293s/K', 'submitted', '-', 'user'),
-(9, 'admin', '$2y$10$EoUR4gQpMGLKmT2/LSbsQeF9GgvugX83oWApdit8TRnZlZYAiEL2.', 'draft', '-', 'admin');
+(1, 'retno', '$2y$10$yhNwnkhtXQoSdExMMkf0f.yO7HRj2btQ5ZnTDN5T6SQT55f293s/K', 'submitted', 'Diterima', 'user'),
+(9, 'admin', '$2y$10$EoUR4gQpMGLKmT2/LSbsQeF9GgvugX83oWApdit8TRnZlZYAiEL2.', 'draft', 'Diterima', 'admin'),
+(10, 'bela', '$2y$10$mM1DCUzqF5YrEis2zrfPaOlWuBrSotBLWm3oIJa95GY/CqbdMkTIO', 'draft', '-', 'user'),
+(11, 'Retno Mulyani', '$2y$10$FbK3vrzBEOdskpKp1E1MTuMdVCipTiusHgx4KlTnVuXjL5FW8QOaK', 'draft', '-', 'user'),
+(12, 'Alin Sukmawati', '$2y$10$.97p2tSx36aABjnpKJta0uLoy9avcm5GVF5LMfhtFT2Bewf8za6Oe', 'draft', '-', 'user');
 
 --
 -- Indexes for dumped tables
@@ -138,13 +157,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `berkas`
 --
 ALTER TABLE `berkas`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `biodata`
 --
 ALTER TABLE `biodata`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `data_pendaftar`
@@ -156,7 +175,7 @@ ALTER TABLE `data_pendaftar`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
