@@ -1,14 +1,18 @@
 @ -1,35 +1,2 @@
 # 🏫 PPDB Online SMA GENZ
 
-![Login](https://github.com/retnomly19/ppdb/blob/main/main/screenshots/Login.jpeg?raw=true)  
-*Screenshot Login*
 
-![Dashboard](https://github.com/retnomly19/ppdb/blob/main/main/screenshots/Dashboard.jpeg?raw=true)  
-*Screenshot Dashboard*
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/140b0851-2bc5-4bbb-8c91-71de8294b414" />
+*Screenshot Home*
 
-![Dashboard Admin](https://github.com/retnomly19/ppdb/blob/main/main/screenshots/Dashboard-admin.jpeg?raw=true)  
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e4befed7-42d1-4b04-89a6-940c3295b775" /> 
+*Screenshot Dashboard user*
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7d13aaed-573d-46b8-b1cd-44dfdc499fa4" />
 *Screenshot Dashboard Admin*
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cdbd76e8-e00b-4887-9352-7748aedbccf9" />
+*Screenshot Status Pendaftaran*
 
 ## 📌 Tentang Proyek
 Website Penerimaan Peserta Didik Baru (PPDB) untuk SMAN 1 Bumiayu dengan fitur:
